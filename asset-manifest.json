@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/16player.github.io/hws2/static/css/main.678b8a14.css",
-    "main.js": "/16player.github.io/hws2/static/js/main.e3f0d05d.js",
-    "static/js/787.66cb4309.chunk.js": "/16player.github.io/hws2/static/js/787.66cb4309.chunk.js",
-    "static/media/avatar.png": "/16player.github.io/hws2/static/media/avatar.d947cb9d0d13765666b6.png",
-    "index.html": "/16player.github.io/hws2/index.html",
-    "main.678b8a14.css.map": "/16player.github.io/hws2/static/css/main.678b8a14.css.map",
-    "main.e3f0d05d.js.map": "/16player.github.io/hws2/static/js/main.e3f0d05d.js.map",
-    "787.66cb4309.chunk.js.map": "/16player.github.io/hws2/static/js/787.66cb4309.chunk.js.map"
+    "main.css": "/16player.github.io/HomeWorks/static/css/main.678b8a14.css",
+    "main.js": "/16player.github.io/HomeWorks/static/js/main.b729007f.js",
+    "static/js/787.66cb4309.chunk.js": "/16player.github.io/HomeWorks/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/16player.github.io/HomeWorks/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/16player.github.io/HomeWorks/index.html",
+    "main.678b8a14.css.map": "/16player.github.io/HomeWorks/static/css/main.678b8a14.css.map",
+    "main.b729007f.js.map": "/16player.github.io/HomeWorks/static/js/main.b729007f.js.map",
+    "787.66cb4309.chunk.js.map": "/16player.github.io/HomeWorks/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.678b8a14.css",
-    "static/js/main.e3f0d05d.js"
+    "static/js/main.b729007f.js"
   ]
 }
