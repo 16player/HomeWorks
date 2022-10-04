@@ -1,5 +1,5 @@
 import React from 'react'
-import { AffairType } from '../../HW2'
+import {AffairType, filterAffairs} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
 import affairs from "../Affairs";
@@ -26,12 +26,12 @@ function Affair(props: AffairPropsType) {
         >
             <div id={'hw2-name-' + props.affair._id} className={nameClass}>
                 {/*создаёт студент*/}
-
+                {props.affair.name}
                 {/**/}
             </div>
             <div id={'hw2-priority-' + props.affair._id} hidden>
                 {/*создаёт студент*/}
-
+                {props.affair.priority}
                 {/**/}
             </div>
 
