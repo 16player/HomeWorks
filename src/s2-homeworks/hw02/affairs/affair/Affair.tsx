@@ -1,8 +1,7 @@
 import React from 'react'
-import {AffairType, filterAffairs} from '../../HW2'
+import {AffairType} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
-import affairs from "../Affairs";
 
 type AffairPropsType = {
     // key не нужно типизировать

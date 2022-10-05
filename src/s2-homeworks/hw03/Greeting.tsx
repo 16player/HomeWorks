@@ -1,23 +1,19 @@
 import React, {
     ChangeEvent,
-    ChangeEventHandler,
-    FocusEventHandler,
     KeyboardEvent,
-    KeyboardEventHandler,
     MouseEventHandler
 } from 'react'
 import s from './Greeting.module.css'
-import {pureOnBlur} from "./GreetingContainer";
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: ChangeEventHandler<HTMLInputElement> // need to fix any
-    addUser:MouseEventHandler<HTMLButtonElement> // need to fix any
-    onBlur: FocusEventHandler<HTMLInputElement> // need to fix any
-    onEnter:KeyboardEventHandler<HTMLInputElement> // need to fix any
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>)=>void // need to fix any
+    addUser: MouseEventHandler<HTMLButtonElement> // need to fix any
+    onBlur: (e: ChangeEvent<HTMLInputElement>)=>void // need to fix any
+    onEnter: (e: KeyboardEvent<HTMLInputElement>)=>void // need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
-    lastUserName?: string // need to fix any
+    lastUserName?: any // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
