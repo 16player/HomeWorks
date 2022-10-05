@@ -1,6 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
+import user from "../hw08/User";
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
@@ -11,11 +12,11 @@ export const pureAddUser = (name: string, setError: (p:string)=>void, setName: (
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
     const trimmed = name.trim()
     if (trimmed){
-        setName(trimmed)
-        setError('Ошибка! Введите имя!')
-    }else {
         setName('')
         addUserCallback('')
+    }else {
+       setError('Ошибка! Введите имя!')
+       name && setName('')
     }
 }
 
@@ -47,9 +48,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const [error, setError] = useState<string>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        name && setName(e.currentTarget.value.trim) // need to fix
+        const trimmedName = e.currentTarget.value.trim() // need to fix
 
-        error && setError('')
+        if (trimmedName){
+           setName(trimmedName)
+        }
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
@@ -64,7 +67,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = users.length// need to fix
+    const lastUserName = users.length // need to fix
 
     return (
         <Greeting
