@@ -1,7 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
-import user from "../hw08/User";
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
@@ -22,8 +21,8 @@ export const pureAddUser = (name: string, setError: (p:string)=>void, setName: (
 
 export const pureOnBlur = (name: string, setError: (p:string)=>void) => {
     // если имя пустое - показать ошибку
-    const trimmed = name.trim()
-    if (trimmed === ''){
+
+    if (!name){
         return setError('Ошибка! Введите имя!')
     }
 }
@@ -67,7 +66,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = users.length // need to fix
+    const lastUserName = name.trim() // need to fix
 
     return (
         <Greeting
