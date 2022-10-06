@@ -1,35 +1,34 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
-import { UserType } from './HW3'
+import {UserType} from './HW3'
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
-    addUserCallback: (name:string)=>void // need to fix any
+    addUserCallback: (name: string) => void // need to fix any
 }
 
-export const pureAddUser = (name: string, setError: (p:string)=>void, setName: (m:string)=>void, addUserCallback: (name:string)=>void) => {
+export const pureAddUser = (name: string, setError: (p: string) => void, setName: (m: string) => void, addUserCallback: (name: string) => void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    const trimmed = name.trim()
-    if (trimmed){
-        setName('')
+    const trimmedName = name.trim()
+    if (!trimmedName) {
+        setError('Ошибка! Введите имя!')
+    } else {
         addUserCallback('')
-    }else {
-       setError('Ошибка! Введите имя!')
-       name && setName('')
+        setName(' ')
     }
 }
 
-export const pureOnBlur = (name: string, setError: (p:string)=>void) => {
+export const pureOnBlur = (name: string, setError: (p: string) => void) => {
     // если имя пустое - показать ошибку
-
-    if (!name){
-        return setError('Ошибка! Введите имя!')
+    const trimmedName = name.trim()
+    if (!trimmedName) {
+        setError('Ошибка! Введите имя!')
     }
 }
 
-export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => {
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
     // если нажата кнопка Enter - добавить
-    if (e.key === 'Enter'){
+    if (e.key === 'Enter') {
         addUser()
     }
 }
@@ -47,10 +46,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const [error, setError] = useState<string>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        const trimmedName = e.currentTarget.value.trim() // need to fix
-
+const trimmedName = e.currentTarget.value.trim()
         if (trimmedName){
-           setName(trimmedName)
+            setName(trimmedName)
+            setError('')
+        }else{
+            setError('Error')
+            setName('')
         }
     }
     const addUser = () => {
@@ -66,7 +68,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = name.trim() // need to fix
+    const lastUserName = '' // need to fix
 
     return (
         <Greeting
