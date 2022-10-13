@@ -68,7 +68,7 @@ const trimmedName = e.currentTarget.value.trim()
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = '' // need to fix
+    const lastUserName = users.length !== 0 ? users[users.length - 1].name : '' // need to fix
 
     return (
         <Greeting
