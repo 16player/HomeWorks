@@ -12,6 +12,7 @@ export const pureAddUser = (name: string, setError: (p: string) => void, setName
     const trimmedName = name.trim()
     if (!trimmedName) {
         setError('Ошибка! Введите имя!')
+        setName('')
     } else {
         addUserCallback('')
         setName('')
@@ -46,7 +47,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const [error, setError] = useState<string>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-const trimmedName = e.currentTarget.value.trim()
+const trimmedName = e.currentTarget.value
         if (trimmedName){
             setName(trimmedName)
             setError('')
@@ -68,7 +69,8 @@ const trimmedName = e.currentTarget.value.trim()
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = users.length !== 0 ? users[users.length - 1].name : '' // need to fix
+    const lastUserName = users.length !== 0 ? users[users.length - 1].name : ''  // need to fix
+
 
     return (
         <Greeting
