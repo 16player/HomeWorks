@@ -1,15 +1,15 @@
 .button {
-    background-color: #0066cc;
 }
 
 .disabled {
-
+background-color: #cc9c00;
 }
 
 .secondary {
 }
 
 .default {
+
 }
 
 .red {
